@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "click-datetime"
-version = "0.4.0"
-description = "Datetime type support for click."
+name = "click-pendulum"
+version = "0.1.0"
+description = "Pendulum type support for click."
 authors = ["Dawson R <105720-ddaws@users.noreply.gitlab.com>"]
 license = "MIT"
 readme = "README.md"
@@ -14,6 +14,7 @@ build-backend = "poetry.core.masonry.api"
 python = "^3.12"
 click = ">=8.0.0,<9.0.0"
 wheel = "^0.44.0"
+pendulum = "^3.0.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.8.0"
