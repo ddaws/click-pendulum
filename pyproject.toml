@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "click-pendulum"
-version = "0.1.1"
+version = "0.2.1"
 description = "Pendulum type support for click."
 authors = ["Dawson R <105720-ddaws@users.noreply.gitlab.com>"]
 license = "MIT"
