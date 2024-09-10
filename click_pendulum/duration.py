@@ -24,8 +24,8 @@ class Duration(click.ParamType):
 
         try:
             match = self._pattern.match(value)
-            if not match:
-                raise ValueError("Invalid duration format")
+            if not match or not match.group(0).strip():
+                raise ValueError("Invalid duration format: no matches found")
 
             duration_kwargs = {
                 "weeks": int(match.group("weeks") or 0),
