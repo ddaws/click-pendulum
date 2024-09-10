@@ -1,3 +1,5 @@
+import re
+
 import click
 import pendulum
 
@@ -9,18 +11,17 @@ class Duration(click.ParamType):
 
     name = "duration"
 
-    _pattern: str
+    _pattern: re.Pattern
 
     def __init__(self, pattern: str):
-        self._pattern = pattern
+        self._pattern = re.compile(pattern)
 
     def convert(self, value: str | None, param, ctx):
-        import re
         if value is None:
             return value
 
         try:
-            match = re.match(self._pattern, value)
+            match = self._pattern.match(value)
             if not match:
                 raise ValueError("Invalid duration format")
 
