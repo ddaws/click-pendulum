@@ -1,26 +1,25 @@
-# Click Datetime
+# Click Pendulum
 
-Click support for Python's `datetime` types to allow developers to easy parse 
-date strings as parameters to Python click CLIs.
+Click support for Pendulum date, time, interval and duration types to allow 
+developers to easily parse strings as parameters to Python click CLIs.
 
 ## Example
 
-You can accept a datetime as a parameter to your click CLI
+You can accept a Pendulum DateTime as a parameter to your click CLI
 
 ```python
-from datetime import datetime
-import click
-from click_datetime import Datetime
+import click, pendulum
+from click_pendulum import DateTime
 
 
 @click.option(
     "--date",
-    type=Datetime(format="%Y-%m-%d"),
-    default=datetime.now(),
+    type=DateTime(),
+    default=pendulum.now(),
     help="An example parsing and printing a datetime.",
 )
 @click.command()
-def cli(date: datetime):
+def cli(date: pendulum.DateTime):
     click.echo("The date : {0}".format(date))
 
 
@@ -35,7 +34,7 @@ $ python main.py --date=2016-01-01
 ## Installation
 
 ```bash
-pip install click-datetime
+pip install click-pendulum
 ```
 
 ## Development
@@ -54,7 +53,7 @@ python -m .venv/test
 source .venv/test/bin/activate
 
 # Confirm importing and exporting is correct
-python -c 'import click_datetime as cd; print(dir(cd))'
+python -c 'import click_pendulum as cd; print(dir(cd))'
 ```
 
 ## Authors
