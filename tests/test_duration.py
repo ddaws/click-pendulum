@@ -2,6 +2,7 @@ import click
 import pendulum
 import pytest
 from click.testing import CliRunner
+
 from click_pendulum import Duration
 
 CLICK_SUCCESS = 0
@@ -34,6 +35,8 @@ def test_short_duration_no_spaces():
     assert result.exit_code == CLICK_SUCCESS
     assert "Duration: 3 days 2 minutes" in result.output
 
+
+def test_invalid_duration():
     runner = CliRunner()
     result = runner.invoke(cli, ["--duration", "invalid-duration"])
     assert result.exit_code != CLICK_SUCCESS
