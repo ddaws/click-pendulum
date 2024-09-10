@@ -30,7 +30,31 @@ $ python examples/datetime_with_custom_format.py --date=2016-01-01
 The date : 2016-01-01 00:00:00+00:00
 ```
 
-## Installation
+## Example: `pendulum.Duration`
+
+You can accept a Pendulum Duration as a parameter to your click CLI
+
+```python
+import click, pendulum
+from click_pendulum import Duration
+
+@click.option(
+    "--duration",
+    type=Duration(),
+    help="Parse a duration string.",
+)
+@click.command()
+def cli(duration: pendulum.Duration):
+    click.echo(f"Duration: {duration}")
+
+if __name__ == "__main__":
+    cli()  # type: ignore
+```
+
+```bash
+$ python examples/duration_parser.py --duration="2d5h"
+Duration: 2 days 5 hours
+```
 
 ```bash
 pip install click-pendulum
