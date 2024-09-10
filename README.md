@@ -11,7 +11,6 @@ You can accept a Pendulum DateTime as a parameter to your click CLI
 import click, pendulum
 from click_pendulum import DateTime
 
-
 @click.option(
     "--date",
     type=DateTime(),
