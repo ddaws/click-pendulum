@@ -2,12 +2,12 @@ from datetime import datetime
 
 import click
 
-from click_datetime import Datetime
+from click_pendulum import DateTime
 
 
 @click.option(
     "--date",
-    type=Datetime(format="%Y-%m-%d"),
+    type=DateTime(),
     default=datetime.now(),
     help="An example parsing and printing a datetime.",
 )
