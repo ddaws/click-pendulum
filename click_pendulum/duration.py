@@ -6,7 +6,16 @@ import pendulum
 
 class Duration(click.ParamType):
     """
-    A Pendulum Duration object
+    A Pendulum Duration object.
+
+    The pattern used for matching must include the following named groups:
+    - weeks: Matches the number of weeks.
+    - days: Matches the number of days.
+    - hours: Matches the number of hours.
+    - minutes: Matches the number of minutes.
+    - seconds: Matches the number of seconds.
+
+    Each group is optional, but the pattern must be structured to capture these groups if present.
     """
 
     name = "duration"
