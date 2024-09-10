@@ -28,7 +28,12 @@ def test_valid_duration_long():
     assert "Duration: 3 days 2 hours 4 minutes" in result.output
 
 
-def test_invalid_duration():
+def test_short_duration_no_spaces():
+    runner = CliRunner()
+    result = runner.invoke(cli, ["--duration", "3d2m"])
+    assert result.exit_code == CLICK_SUCCESS
+    assert "Duration: 3 days 2 minutes" in result.output
+
     runner = CliRunner()
     result = runner.invoke(cli, ["--duration", "invalid-duration"])
     assert result.exit_code != CLICK_SUCCESS
