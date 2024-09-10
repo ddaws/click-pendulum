@@ -11,9 +11,11 @@ class Duration(click.ParamType):
 
     name = "duration"
 
+    DEFAULT_PATTERN = r"(?:(?P<weeks>\d+)\s*w(?:eeks?)?)?\s*(?:(?P<days>\d+)\s*d(?:ays?)?)?\s*(?:(?P<hours>\d+)\s*h(?:ours?)?)?\s*(?:(?P<minutes>\d+)\s*m(?:inutes?)?)?\s*(?:(?P<seconds>\d+)\s*s(?:econds?)?)?"
+
     _pattern: re.Pattern
 
-    def __init__(self, pattern: str):
+    def __init__(self, pattern: str = DEFAULT_PATTERN):
         self._pattern = re.compile(pattern)
 
     def convert(self, value: str | None, param, ctx):
