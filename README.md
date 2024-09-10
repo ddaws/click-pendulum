@@ -3,7 +3,7 @@
 Click support for Pendulum date, time, interval and duration types to allow 
 developers to easily parse strings as parameters to Python click CLIs.
 
-## Example
+## Example: `pendulum.DateTime`
 
 You can accept a Pendulum DateTime as a parameter to your click CLI
 
@@ -21,13 +21,13 @@ from click_pendulum import DateTime
 def cli(date: pendulum.DateTime):
     click.echo("The date : {0}".format(date))
 
-
 if __name__ == "__main__":
     cli()  # type: ignore
 ```
 
 ```bash
-$ python main.py --date=2016-01-01
+$ python examples/datetime_with_custom_format.py --date=2016-01-01
+The date : 2016-01-01 00:00:00+00:00
 ```
 
 ## Installation
