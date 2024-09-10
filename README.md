@@ -3,7 +3,13 @@
 Click support for Pendulum date, time, interval and duration types to allow 
 developers to easily parse strings as parameters to Python click CLIs.
 
-## Example: `pendulum.DateTime`
+```bash
+pip install click-pendulum
+```
+
+## Examples 
+
+### `pendulum.DateTime`
 
 You can accept a Pendulum DateTime as a parameter to your click CLI
 
@@ -30,7 +36,7 @@ $ python examples/datetime_with_custom_format.py --date=2016-01-01
 The date : 2016-01-01 00:00:00+00:00
 ```
 
-## Example: `pendulum.Duration`
+### `pendulum.Duration`
 
 You can accept a Pendulum Duration as a parameter to your click CLI
 
@@ -54,29 +60,6 @@ if __name__ == "__main__":
 ```bash
 $ python examples/duration_parser.py --duration="2d5h"
 Duration: 2 days 5 hours
-```
-
-```bash
-pip install click-pendulum
-```
-
-## Development
-
-### Building and packaging
-
-```bash
-poetry build
-```
-
-### Testing the compiled wheel
-
-```bash
-# Create a virtual environment for testing
-python -m .venv/test
-source .venv/test/bin/activate
-
-# Confirm importing and exporting is correct
-python -c 'import click_pendulum as cd; print(dir(cd))'
 ```
 
 ## Authors
