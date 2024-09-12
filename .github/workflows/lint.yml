@@ -30,3 +30,6 @@ jobs:
 
     - name: Lint with Black
       run: poetry run black --check click_pendulum/ tests/
+
+    - name: Test with Pytest
+      run: poetry run pytest
