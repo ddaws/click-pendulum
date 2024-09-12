@@ -7,7 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8, 3.9, 3.10, 3.11, 3.12]
+        python-version:
+          - "3.13.0-rc.2"
+          - "3.12.6"
+          - "3.11.10"
+          - "3.10.15"
 
     steps:
     - name: Checkout code
