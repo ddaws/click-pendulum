@@ -29,4 +29,4 @@ jobs:
       run: poetry install
 
     - name: Lint with Black
-      run: poetry run black --check click_datetime/ tests/
+      run: poetry run black --check click_pendulum/ tests/
