@@ -17,5 +17,5 @@ wheel = "^0.44.0"
 pendulum = "^3.0.0"
 
 [tool.poetry.group.dev.dependencies]
-black = "^24.8.0"
+black = ">=24.8,<27.0"
 pytest = "^8.3.2"
