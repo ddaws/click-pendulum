@@ -18,4 +18,4 @@ pendulum = "^3.0.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.8.0"
-pytest = "^8.3.2"
+pytest = ">=8.3.2,<10.0.0"
